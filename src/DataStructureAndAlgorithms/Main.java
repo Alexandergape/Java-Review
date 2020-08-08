@@ -6,6 +6,7 @@ public class Main {
 
         mySL.addFirst(78);
         System.out.println(mySL.first());
+//        mySL.
         System.out.print("AHHHHHH");
     }
 }

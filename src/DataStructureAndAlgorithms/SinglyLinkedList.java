@@ -36,22 +36,33 @@ public class SinglyLinkedList<E> {
             tail = head;
         size++;
     }
-    public void addLast(E e){
+
+    public void addLast(E e) {
         Node<E> newest = new Node<>(e, null);
-        if(isEmpty())
+        if (isEmpty())
             head = newest;
-        else 
+        else
             tail.setNext(newest);
         tail = newest;
         size++;
     }
-    public E removeFirst(){
-        if(isEmpty())return null;
+
+    public E removeFirst() {
+        if (isEmpty()) return null;
         E answer = head.getElement();
         head = head.getNext();
         size--;
-        if(size == 0)
+        if (size == 0)
             tail = null;
         return answer;
     }
+
+    public void getAll() {
+        if (isEmpty()) System.out.println("\nThe list is empty.\n");
+        ;
+        E e = head.getElement();
+//        Node node;
+//        head=
+    }
+
 }
