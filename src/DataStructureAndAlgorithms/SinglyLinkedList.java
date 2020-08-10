@@ -112,13 +112,13 @@ public class SinglyLinkedList<E> implements Iterable<E> {
 //        }
     }
 
-    private Node<E> getNode(int pos){
+    private Node<E> getNode(int pos) {
         Node<E> headCopy = head;
         while (pos > 0) {
             headCopy = headCopy.getNext();
             pos--;
         }
-        return  headCopy;
+        return headCopy;
     }
 
 //    public E getAll(){ // already developed above
@@ -162,7 +162,7 @@ public class SinglyLinkedList<E> implements Iterable<E> {
 //        Node<E> headCopy = head;
 //        for (int i = 0; i < this.size; i++)
 //            headCopy = headCopy.next;
-        getNode(pos).element=newVal;
+        getNode(pos).element = newVal;
 //        headCopy.element = newVal;
 //            for (E e : this)
         return 0;
@@ -173,48 +173,47 @@ public class SinglyLinkedList<E> implements Iterable<E> {
             return 1; //error
 
 //        this.getI(pos);
-        if (pos==0) // first position
-                head=head.getNext();
-        else if(pos<size-1){ // intermediate position
-            Node<E> aux = getNode(pos-1);
-            aux.setNext(getNode(pos+1));
-        }else{ // last position
-            getNode(size-1).setNext(null);
+        if (pos == 0) // first position
+            head = head.getNext();
+        else if (pos < size - 1) { // intermediate position
+            Node<E> aux = getNode(pos - 1);
+            aux.setNext(getNode(pos + 1));
+        } else { // last position
+            getNode(size - 1).setNext(null);
 //            this.tail=null;
         }
         size--;
-        if (size==0)
-            tail=null;
+        if (size == 0)
+            tail = null;
         return 0;
     }
 
-    public int add(int pos, E e){
+    public int add(int pos, E e) {
         if (pos < 0 || pos > size)
             return 1; //error
-        if (pos==0) {
+        if (pos == 0) {
 //            Node<E> aux=new Node<>(e, head);
 //            if (size==0)
 //                tail.setNext(new Node<>(e, null));
 
             head = new Node<>(e, head);
-        }
-        else if(pos<size-1){
+        } else if (pos < size - 1) {
 //            getNode(pos).setNext(new Node<>(e, getNode(pos)/*null*/));
 //            getNode(pos)= new Node<>(e, getNode(pos)/*null*/);
 //
-            Node<E> aux=head;
-            for (int i=0;i<pos;i++){
-                head=head.getNext();
+            Node<E> aux = head;
+            for (int i = 0; i < pos; i++) {
+                head = head.getNext();
             }
-            head=new Node<>(e, getNode(pos)/*null*/);
-            head=aux;
+            head = new Node<>(e, getNode(pos)/*null*/);
+            head = aux;
 //            getNode(pos).setNext(getNode(pos+1));
-        }else{
-            Node<E> aux=new Node<>(e,null);
+        } else {
+            Node<E> aux = new Node<>(e, null);
             tail.setNext(aux);
-            tail=aux;
+            tail = aux;
         }
-        if(size==0)tail=head;
+        if (size == 0) tail = head;
         size++;
         return 0; // success
     }
