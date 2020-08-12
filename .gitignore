@@ -1,0 +1,11 @@
+*.class
+
+# ignore files from Intellij
+.idea/
+Java-Review.iml
+
+# ignore files from vscode
+.vscode/
+
+# ignore all .class
+out/
