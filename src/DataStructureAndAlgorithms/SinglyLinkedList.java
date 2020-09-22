@@ -56,11 +56,10 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     }
 
     public void addLast(E e) { // adds an element to the end of the list
-        Node<E> newest = new Node<>(e, null);
-        if (isEmpty()) head = newest;
-        else
-            tail.setNext(newest);
-        tail = newest;
+        Node<E> newest = new Node<>(e, null); // node will eventually be the tail
+        if (isEmpty()) head = newest; // special case: previously empty list
+        else tail.setNext(newest); // new node after existing tail
+        tail = newest; // new node becomes the tail
         size++;
     }
 
@@ -95,9 +94,9 @@ public class SinglyLinkedList<E> implements Iterable<E> {
     public int search(E e) { // prints out all the matches of the searched object
         if (isEmpty()) return -1;
         Node<E> headCopy = head;
-        int pos = 0;
+        int pos = -1;
         while (headCopy != null) {
-            if (head.toString().equals(e.toString()))
+            if (headCopy.toString().equals(e.toString()))
                 break;
             pos++;
             headCopy = headCopy.getNext();

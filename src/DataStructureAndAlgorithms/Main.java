@@ -29,6 +29,8 @@ public class Main {
 //            Integer val = mySL.iterator().next();
 //            System.out.println(val);
 //        }
+
+//        test *a;
         func();
     }
 
