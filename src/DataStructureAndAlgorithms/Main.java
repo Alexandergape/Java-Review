@@ -31,19 +31,41 @@ public class Main {
 //        }
 
 //        test *a;
-        func();
+
+
+//        func();
+
+        var intHeap = new BinaryHeap<Integer>();
+        intHeap.add(8);
+        intHeap.add(7);
+        intHeap.add(1);
+        intHeap.add(15);
+        intHeap.add(10);
+        intHeap.add(25);
+
+        System.out.println(intHeap.toString());
+
+//        HashMap < Integer, String> zzz;
+        var map = new HashMap<Integer, Character>();
+//        map.put(0, "A");
+        for(int i='A'; i < 'Z'; i++)
+            map.put(i, (char)i);
+
+        System.out.println(map.toString());
+        System.out.println(map.get(0));
     }
 
     public static void func() {
         SinglyLinkedList<String> myList = new SinglyLinkedList<>();
         int opt;
+        Scanner S;
         do {
             System.out.println("1. Create");
             System.out.println("2. Read");
             System.out.println("3. Update");
             System.out.println("4. Delete");
             System.out.println("0. EXIT");
-            Scanner S = new Scanner(System.in);
+            S = new Scanner(System.in);
             System.out.println("Your selection: ");
             opt = S.nextInt();
             if (opt == 0) break;
@@ -74,6 +96,6 @@ public class Main {
                     break;
             }
         } while (opt != 0);
-
+        S.close();
     }
 }
