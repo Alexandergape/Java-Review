@@ -46,7 +46,7 @@ public class Main {
         System.out.println(intHeap.toString());
 
 //        HashMap < Integer, String> zzz;
-        var map = new HashMap<Integer, Character>();
+        var map = new Hashmap<Integer, Character>();
 //        map.put(0, "A");
         for(int i='A'; i < 'Z'; i++)
             map.put(i, (char)i);

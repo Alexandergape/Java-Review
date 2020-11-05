@@ -2,12 +2,12 @@ package DataStructureAndAlgorithms;
 
 import java.util.LinkedList;
 
-public class HashMap<K, V> {
+public class Hashmap<K, V> {
     private LinkedList<Entry<K, V>> buckets;
     private int numBuckets;
     private int size = 0;
 
-    public HashMap() {
+    public Hashmap() {
         this.buckets = new LinkedList<>();
 
     }
